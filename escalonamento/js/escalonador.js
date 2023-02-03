@@ -34,7 +34,16 @@
         iniciar: function () {
             this.processTable.innerHTML = ''
 
+            if (this.validaParametros()) {
+                //code
+            }
             
-        }
+        },
+
+        validaParametros: function (params) {
+            return validaInput(1, this.quantum, this.processPerMin, this.waitTimeIO, this.processTime) &&
+            validaInput(0, this.ioChance)
+        },
     }
 }(window, document))
+
